@@ -8,11 +8,11 @@ module Merb
               key :password_reset_code, String
             end # base.class_eval
             def find_with_password_reset_code(code)
-              find(:first, :conditions => {:password_reset_code => code})
+              first(:password_reset_code => code)
             end
             
             def find_with_login_param(param_name, value)
-              find(:first, :conditions => {param_name => value})
+              first(param_name => value)
             end
           end # self.extended
         end # MMClassMethods
